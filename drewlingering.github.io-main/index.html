@@ -1,0 +1,64 @@
+---
+layout: default
+title: "Home"
+---
+
+<header class="hero">
+    <div class="hero-content">
+        <h1>Welcome to this blog</h1>
+        <p>Insights, stories, and updates.</p>
+        <a href="#posts" class="btn">Start Exploring</a>
+    </div>
+</header>
+<h2>📝 Latest Blog Posts</h2>
+<ul>
+  {% for post in site.posts limit:3 %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a><br>
+      <small>Published {{ post.date | date: "%B %d, %Y" }}</small>
+    </li>
+  {% endfor %}
+</ul>
+
+<section id="posts" class="post-list">
+</section>
+
+<section id="about" class="about-section">
+    <h2>Intro</h2>
+    <p>
+        Hi, this is {{ site.author }}! Welcome to a little corner of the web. Here, see shared thoughts, inspirations, and discoveries with the world.
+        Join as are explored a wide range of topics and ideas!
+    </p>
+    <a href="/about" class="btn">Learn More</a>
+</section>
+
+
+<footer>
+    <p>Follow on:</p>
+    <ul class="social-links">
+        <li><a href="https://facebook.com">Facebook</a></li>
+        <li><a href="https://linkedin.com">LinkedIn</a></li>
+        <li><a href="https://twitter.com">Twitter</a></li>
+        <li><a href="https://bluesky.com">Bluesky</a></li>
+    </ul>
+</footer>
+<div id="disqus_thread"></div>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://drewlingering.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<script id="dsq-count-scr" src="//drewlingering.disqus.com/count.js" async></script>
